@@ -274,6 +274,7 @@ int main() {
 
         for (int y = 0; y < gScreenHeight; ++y) {
             for (int x = 0; x < gScreenWidth; ++x) {
+                // Added 0.5f to the pixel coordinates to center the pixel on the screen so it may help with the antialiasing and avoid the cutoff issue.
                 const sf::Vector2f pixel(static_cast<float>(x) + 0.5f, static_cast<float>(y) + 0.5f);
                 // Q2: antialiasing. Take four samples at offsets of +-0.3333 from the pixel
                 // and average their colors.
