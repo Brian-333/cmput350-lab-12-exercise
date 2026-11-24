@@ -1,5 +1,14 @@
 ﻿Q3. What happens to the bounding boxes with update + fullRefit?
 
+The bounding boxes changes its sizes bounding the same circles that it initially bounds since the tree structure never changes.
+
 Q4. What happens with reset (rebuild every frame) instead?
 
+The bounding boxes are rebuilt each time since the tree structure is updated. The bounding boxes will bound different circles according to the new tree.
+
 Q5. Why are some circles drawn with their sides cut off?
+
+There is no cutoff shown following the current instructions and orders.
+But if scene.update() is changed after bvh.reset(), 
+the BVH will not match the location since it's been moved and the tracing will not be accurate
+and may be cutoff by the bounding box.
